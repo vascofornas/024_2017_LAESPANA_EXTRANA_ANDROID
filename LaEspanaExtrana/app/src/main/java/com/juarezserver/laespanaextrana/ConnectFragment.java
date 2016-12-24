@@ -41,7 +41,8 @@ public class ConnectFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(getActivity(), "Hello World", Toast.LENGTH_LONG).show();
+               Firebase mRefChild = mRef.child("Name");
+                    mRefChild.setValue("Modesto");
             }
         });
 
