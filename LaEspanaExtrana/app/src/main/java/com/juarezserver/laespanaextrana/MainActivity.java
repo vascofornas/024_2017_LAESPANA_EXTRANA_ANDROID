@@ -33,11 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
         setupToolbar();
 
-        DataModel[] drawerItem = new DataModel[3];
+        DataModel[] drawerItem = new DataModel[8];
 
-        drawerItem[0] = new DataModel(R.drawable.connect, "Connect");
-        drawerItem[1] = new DataModel(R.drawable.fixtures, "Fixtures");
-        drawerItem[2] = new DataModel(R.drawable.table, "Table");
+        drawerItem[0] = new DataModel(R.drawable.ccaa, "Enclaves por CCAA");
+        drawerItem[1] = new DataModel(R.drawable.enclaves, "Enclaves por tipo");
+        drawerItem[2] = new DataModel(R.drawable.cercanos, "Enclaves más cercanos");
+        drawerItem[3] = new DataModel(R.drawable.populares, "Enclaves más populares");
+        drawerItem[4] = new DataModel(R.drawable.nuevo, "Proponer un enclave nuevo");
+        drawerItem[5] = new DataModel(R.drawable.mapas, "Mapas");
+        drawerItem[6] = new DataModel(R.drawable.libro, "El libro");
+        drawerItem[7] = new DataModel(R.drawable.author, "Los autores");
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
 

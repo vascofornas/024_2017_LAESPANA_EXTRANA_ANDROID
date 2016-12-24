@@ -27,7 +27,9 @@
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:elevation="1dp" />
+            android:elevation="1dp"
+            android:background="@drawable/descarga"
+            android:alpha=".1" />
 
     </LinearLayout>
 
