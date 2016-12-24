@@ -16,6 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.juarezserver.laespanaextrana.MainActivity"></activity>
+
+
+        <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     </application>
 
 </manifest>
