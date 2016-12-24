@@ -1,4 +1,4 @@
-package com.appeteria.introsliderexample;
+package com.juarezserver.laespanaextrana;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

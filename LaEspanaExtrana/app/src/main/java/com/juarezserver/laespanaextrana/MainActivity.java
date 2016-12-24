@@ -1,4 +1,4 @@
-package com.appeteria.introsliderexample;
+package com.juarezserver.laespanaextrana;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
