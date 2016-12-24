@@ -7,7 +7,7 @@
 
     <!-- Screens background -->
     <color name="bg_screen1">#b12515</color>
-    <color name="bg_screen2">#FFBB00</color>
+    <color name="bg_screen2">#ffbb00</color>
     <color name="bg_screen3">#74a443</color>
 
     <!-- dots active colors -->
