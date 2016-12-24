@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "495566586785",
+    "firebase_url": "https://la-espana-extrana.firebaseio.com",
+    "project_id": "la-espana-extrana",
+    "storage_bucket": "la-espana-extrana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495566586785:android:0c2e8c50cf9ff23c",
+        "android_client_info": {
+          "package_name": "com.juarezserver.laespanaextrana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495566586785-frjs3gknsaslru96qb7fp6kmcp8q9qkj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.juarezserver.laespanaextrana",
+            "certificate_hash": "C3447FD478B8B77997D3691C072FDAA01897F26A"
+          }
+        },
+        {
+          "client_id": "495566586785-3leqi1eiun576tr5kh02m3flrepbsgta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0e3rZIe6aLJg6flx2gky_tpm3N86sZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495566586785-3leqi1eiun576tr5kh02m3flrepbsgta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
