@@ -1,14 +1,21 @@
 <resources>
-    <string name="app_name">IntroSlider Example</string>
+    <string name="app_name">La España Extraña</string>
 
-    <string name="next">Next</string>
-    <string name="skip">Skip</string>
-    <string name="start">Start</string>
+    <string name="next">Siguiente</string>
+    <string name="skip">Saltar</string>
+    <string name="start">Entrar</string>
     <string name="title_slide1">Connect the charger</string>
     <string name="desc_slide1">It will start automatically when charger is connected</string>
     <string name="title_slide2">Battery status update</string>
     <string name="desc_slide2">It will  keep you updated on battery charging status through notification and home screen widget</string>
     <string name="title_slide3">Alert on 100%</string>
     <string name="desc_slide3">It will alert you when battery reaches 100%</string>
-
+<string name="html">
+        <![CDATA[
+        <h4 class="slide-right">Javier Sierra y Jesús Callejo</h4>
+        <hr class="slide-right">
+        <p class="slide-right"><a href="http://www.javiersierra.com" target="_blank"><strong>Javier Sierra</strong></a> (Teruel, 1971) y <a href="https://www.facebook.com/jesus.callejocabo" target="_blank"><strong>Jesús Callejo</strong></a> (Valderas, León, 1959) se conocieron hace más de veinte años, al poco de que éste publicara el primer libro de su trilogía sobre los “seres mágicos” de España. Pronto coincidieron en conferencias y tertulias y, además de una amistad duradera, enseguida surgió la idea de escribir una “guía práctica” de los grandes enigmas ibéricos que permitiera a cualquier lector visitarlos y maravillarse ante ellos.</p>
+		<p class="slide-right">Nació así <a href="http://www.javiersierra.com/w/libros/la-espana-extrana/" target="_blank"><em>La España extraña</em></a>, que fue el segundo ensayo de <strong>Javier</strong> tras <a href="http://www.roswell.es" target="_blank"><em>Roswell. Secreto de Estado</em></a>, y el octavo en la fecunda trayectoria de <strong>Jesús</strong> con títulos tan notables como <em>Duendes</em> (1994), <em>Testigos del prodigio</em> (2001) o <em>Secretos medievales</em> (2006). Lo que pocos saben es que ya entonces quedó en el aire el proyecto de completar <a href="http://www.javiersierra.com/w/libros/la-espana-extrana/" target="_blank"><em>La España extraña</em></a> –un libro centrado en misterios y prodigios celestes y celestiales— con otros tomos consagrados a fenómenos vinculados a la tierra (santuarios, cuevas, montañas) y al agua (lagos, ríos, costas)… pero sus caminos marcharon por otros derroteros. <strong>Javier</strong> se centró en novelas de éxito mundial como <a href="http://www.lacenasecreta.com" target="_blank">La cena secreta</a> (2004), <a href="http://www.elmaestrodelprado.com" target="_blank">El maestro del Prado</a> (2013) o <a href="http://www.lapiramideinmortal.com" target="_blank">La pirámide inmortal</a> (2014), mientras que <strong>Jesús</strong> desarrolló su carrera en la radio española, en espacios como <em>La Rosa de los Vientos</em> (Onda Cero) o más recientemente <a href="http://www.laescobula.com/" target="_blank"><em>La Escóbula de la Brújula</em></a> (Radio 4G). </p>
+        ]]>
+    </string>
 </resources>

@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen3">
+    android:background="@drawable/bondoapp"
+    android:layout_margin="10dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="@dimen/img_width"
-            android:layout_height="@dimen/img_height"
-            android:src="@drawable/ic_slide3" />
+        android:orientation="vertical"
+        android:layout_margin="15dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:text="Javier Sierra (Teruel, 1971) y Jesús Callejo (Valderas, León, 1959) se conocieron hace más de veinte años, al poco de que éste publicara el primer libro de su trilogía sobre los “seres mágicos” de España. Pronto coincidieron en conferencias y tertulias y, además de una amistad duradera, enseguida surgió la idea de escribir una “guía práctica” de los grandes enigmas ibéricos que permitiera a cualquier lector visitarlos y maravillarse ante ellos."
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_slide3"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_title"
-            android:textStyle="bold" />
-
+            android:id="@+id/textView"
+            android:textAlignment="textStart" />
         <TextView
-            android:layout_width="wrap_content"
+            android:text="Nació así La España extraña, que fue el segundo ensayo de Javier tras Roswell. Secreto de Estado, y el octavo en la fecunda trayectoria de Jesús con títulos tan notables como Duendes (1994), Testigos del prodigio (2001) o Secretos medievales (2006). Lo que pocos saben es que ya entonces quedó en el aire el proyecto de completar La España extraña –un libro centrado en misterios y prodigios celestes y celestiales— con otros tomos consagrados a fenómenos vinculados a la tierra (santuarios, cuevas, montañas) y al agua (lagos, ríos, costas)… pero sus caminos marcharon por otros derroteros. Javier se centró en novelas de éxito mundial como La cena secreta (2004), El maestro del Prado (2013) o La pirámide inmortal (2014), mientras que Jesús desarrolló su carrera en la radio española, en espacios como La Rosa de los Vientos (Onda Cero) o más recientemente La Escóbula de la Brújula (Radio 4G).."
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="@dimen/desc_padding"
-            android:paddingRight="@dimen/desc_padding"
-            android:text="@string/desc_slide3"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_desc" />
-
+            android:id="@+id/textView"
+            android:layout_marginTop="5dp" />
     </LinearLayout>
 
 </RelativeLayout>
