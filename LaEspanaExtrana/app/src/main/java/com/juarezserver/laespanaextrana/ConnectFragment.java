@@ -6,18 +6,21 @@ package com.juarezserver.laespanaextrana;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.firebase.client.Firebase;
+import android.widget.ListView;
+import android.widget.TextView;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ConnectFragment extends Fragment {
 
-    private Button mSendData;
-    private Firebase mRef;
+
+    private ListView mListView;
+
 
     public ConnectFragment() {
 
@@ -29,22 +32,26 @@ public class ConnectFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
 
+        mListView = (ListView) rootView.findViewById(R.id.comunidadesListView);
 
-        Firebase.setAndroidContext(this.getActivity());
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://la-espana-extrana.firebaseio.com/comunidades");
 
-        mRef = new Firebase("https://la-espana-extrana.firebaseio.com/");
-
-        mSendData = (Button) rootView.findViewById(R.id.sendData);
-
-        mSendData.setOnClickListener(new View.OnClickListener() {
-
+        FirebaseListAdapter<String> firebaseListAdapter = new FirebaseListAdapter<String>(
+                this.getActivity(),
+                String.class,
+                android.R.layout.simple_list_item_1,
+                databaseReference
+        ) {
             @Override
-            public void onClick(View v)
-            {
-               Firebase mRefChild = mRef.child("Name");
-                    mRefChild.setValue("Modesto");
+            protected void populateView(View v, String model, int position) {
+                TextView textView = (TextView) v.findViewById(android.R.id.text1);
+                textView.setText(model);
+                Log.e("Comunidades", model);
             }
-        });
+        };
+
+        mListView.setAdapter(firebaseListAdapter);
+
 
         return rootView;
     }

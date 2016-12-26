@@ -11,7 +11,7 @@
     <string name="title_slide3">Alert on 100%</string>
     <string name="desc_slide3">It will alert you when battery reaches 100%</string>
     <string-array name="navigation_drawer_items_array">
-        <item>Connect</item>
+        <item>Enclaves por CCAA</item>
         <item>Fixtures</item>
         <item>Table</item>
     </string-array>
