@@ -7,11 +7,15 @@ package com.juarezserver.laespanaextrana;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -46,14 +50,27 @@ public class ConnectFragment extends Fragment {
             protected void populateView(View v, String model, int position) {
                 TextView textView = (TextView) v.findViewById(android.R.id.text1);
                 textView.setText(model);
-                Log.e("Comunidades", model);
+
             }
         };
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String topic = String.valueOf(parent.getItemAtPosition(position));
+
+              Log.d("Comunidad",topic);
+
+                //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
+            }
+        });
 
         mListView.setAdapter(firebaseListAdapter);
 
 
         return rootView;
     }
+
+
+
 
 }
