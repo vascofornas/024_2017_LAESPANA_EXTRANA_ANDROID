@@ -6,29 +6,25 @@ package com.juarezserver.laespanaextrana;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ConnectFragment extends Fragment {
+public class EnclavesFragment extends Fragment {
 
 
     private ListView mListView;
 
 
-    public ConnectFragment() {
+    public EnclavesFragment() {
 
 
     }
@@ -60,15 +56,11 @@ public class ConnectFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String topic = String.valueOf(parent.getItemAtPosition(position));
 
-              Log.d("Comunidad",topic);
+              Log.d("Comunidad kkkk",topic);
 
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
-                Log.d("Comunidad",topic);
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_frame, new EnclavesFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+
+             
             }
         });
 

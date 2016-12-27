@@ -1,18 +1,20 @@
 package com.juarezserver.laespanaextrana;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+;
+
+public class EnclavesActivity extends AppCompatActivity {
 
     private String[] mNavigationDrawerItemTitles;
     private DrawerLayout mDrawerLayout;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         DataModel[] drawerItem = new DataModel[8];
 
-        drawerItem[0] = new DataModel(R.drawable.ccaa, "Enclaves por CCAA");
+        drawerItem[0] = new DataModel(R.drawable.ccaa, "Enclaves por CCAA new");
         drawerItem[1] = new DataModel(R.drawable.enclaves, "Enclaves por tipo");
         drawerItem[2] = new DataModel(R.drawable.cercanos, "Enclaves más cercanos");
         drawerItem[3] = new DataModel(R.drawable.populares, "Enclaves más populares");
@@ -79,12 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new TableFragment();
-                break;
-            case 3:
-                fragment = new TableFragment();
-                break;
-            case 4:
-                fragment = new ProponerEnclaveFragment();
                 break;
 
             default:
