@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.juarezserver.laespanaextrana.MainActivity"></activity>
-        <activity android:name="com.juarezserver.laespanaextrana.EnclavesActivity"></activity>
 
 
         <uses-permission android:name="android.permission.INTERNET"></uses-permission>

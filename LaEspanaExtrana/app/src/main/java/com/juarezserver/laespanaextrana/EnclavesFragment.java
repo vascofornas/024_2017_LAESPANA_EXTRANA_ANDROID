@@ -60,7 +60,7 @@ public class EnclavesFragment extends Fragment {
 
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
 
-             
+
             }
         });
 

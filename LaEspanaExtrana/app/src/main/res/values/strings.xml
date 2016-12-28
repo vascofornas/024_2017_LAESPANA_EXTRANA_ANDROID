@@ -12,7 +12,12 @@
     <string name="desc_slide3">It will alert you when battery reaches 100%</string>
     <string-array name="navigation_drawer_items_array">
         <item>Enclaves por CCAA</item>
-        <item>Fixtures</item>
-        <item>Table</item>
+        <item>Enclaves por tipo</item>
+        <item>Enclaves más cercanos</item>
+        <item>Enclaves más populares</item>
+        <item>Proponer nuevo enclave</item>
+        <item>Mapas</item>
+        <item>El libro</item>
+        <item>Los autores</item>
     </string-array>
 </resources>
