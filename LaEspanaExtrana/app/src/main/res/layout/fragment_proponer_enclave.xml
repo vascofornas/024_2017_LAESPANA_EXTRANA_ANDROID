@@ -48,6 +48,12 @@
                 android:ems="10"
                 android:id="@+id/descripcionTxt"
                 android:hint="Descripción del enclave" />
+
+            <Button
+                android:text="Enviar enclave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/enviarBtn" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
