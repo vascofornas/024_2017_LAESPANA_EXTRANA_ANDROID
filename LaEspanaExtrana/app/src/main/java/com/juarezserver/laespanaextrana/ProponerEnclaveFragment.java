@@ -52,6 +52,8 @@ public class ProponerEnclaveFragment extends Fragment {
 
     private ProgressDialog mProgress;
 
+    private DatabaseReference mDatabase;
+
     public ProponerEnclaveFragment() {
 
 
@@ -62,6 +64,7 @@ public class ProponerEnclaveFragment extends Fragment {
 
 
             mStorage = FirebaseStorage.getInstance().getReference();
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Enclaves");
 
         View rootView = inflater.inflate(R.layout.fragment_proponer_enclave, container, false);
 
@@ -100,8 +103,8 @@ public class ProponerEnclaveFragment extends Fragment {
 
             mProgress.setMessage("Subiendo enclave...");
             mProgress.show();
-            String nombre_val = mNombreTxt.getText().toString().trim();
-            String desc_val = mDescripcionTxt.getText().toString().trim();
+            final String nombre_val = mNombreTxt.getText().toString().trim();
+            final String desc_val = mDescripcionTxt.getText().toString().trim();
 
             if(!TextUtils.isEmpty(nombre_val) && !TextUtils.isEmpty(desc_val)){
 
@@ -110,6 +113,15 @@ public class ProponerEnclaveFragment extends Fragment {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Uri downloadUrl = taskSnapshot.getDownloadUrl();
+
+                        DatabaseReference nuevoEnclave = mDatabase.push();
+
+                        nuevoEnclave.child("Nombre_enclave").setValue(nombre_val);
+                        nuevoEnclave.child("Descripcion_enclave").setValue(desc_val);
+                        nuevoEnclave.child("Imagen_Enclave").setValue(downloadUrl.toString());
+
+
+
                         mProgress.dismiss();
                     }
                 });
