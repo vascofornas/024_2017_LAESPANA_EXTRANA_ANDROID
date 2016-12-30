@@ -10,6 +10,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/comunidadesListView" />
+        android:id="@+id/comunidadesListView"
+        android:layout_margin="10dp" />
 
 </RelativeLayout>

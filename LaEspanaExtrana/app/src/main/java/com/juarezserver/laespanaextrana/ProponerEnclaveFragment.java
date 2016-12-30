@@ -6,6 +6,7 @@ package com.juarezserver.laespanaextrana;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -101,7 +103,7 @@ public class ProponerEnclaveFragment extends Fragment {
 
     public void startPosting(){
 
-            mProgress.setMessage("Subiendo enclave...");
+            mProgress.setMessage("Enviando enclave...");
             mProgress.show();
             final String nombre_val = mNombreTxt.getText().toString().trim();
             final String desc_val = mDescripcionTxt.getText().toString().trim();
@@ -118,11 +120,22 @@ public class ProponerEnclaveFragment extends Fragment {
 
                         nuevoEnclave.child("Nombre_enclave").setValue(nombre_val);
                         nuevoEnclave.child("Descripcion_enclave").setValue(desc_val);
+                        nuevoEnclave.child("Tipo_enclave").setValue("Sin definir");
+
+
+
+
                         nuevoEnclave.child("Imagen_Enclave").setValue(downloadUrl.toString());
 
 
 
                         mProgress.dismiss();
+
+                        Toast.makeText(getActivity(),"Enclave enviado con éxito!", Toast.LENGTH_SHORT).show();
+                        mNombreTxt.setText("");
+                        mDescripcionTxt.setText("");
+                        mSelectImage.setImageResource(R.drawable.imagen);
+
                     }
                 });
             }

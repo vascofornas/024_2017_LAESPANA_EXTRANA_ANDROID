@@ -4,6 +4,7 @@ package com.juarezserver.laespanaextrana;
  * Created by modes on 23/12/2016.
  */
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -26,6 +27,7 @@ public class ConnectFragment extends Fragment {
 
 
     private ListView mListView;
+    private ProgressDialog mProgress;
 
 
     public ConnectFragment() {
@@ -40,6 +42,9 @@ public class ConnectFragment extends Fragment {
 
         mListView = (ListView) rootView.findViewById(R.id.comunidadesListView);
 
+        mProgress = new ProgressDialog(this.getActivity());
+        mProgress.setMessage("Cargando Comunidades Autónomas...");
+        mProgress.show();
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://la-espana-extrana.firebaseio.com/comunidades");
 
         FirebaseListAdapter<String> firebaseListAdapter = new FirebaseListAdapter<String>(
@@ -52,6 +57,7 @@ public class ConnectFragment extends Fragment {
             protected void populateView(View v, String model, int position) {
                 TextView textView = (TextView) v.findViewById(android.R.id.text1);
                 textView.setText(model);
+                mProgress.dismiss();
 
             }
         };
@@ -63,7 +69,7 @@ public class ConnectFragment extends Fragment {
               Log.d("Comunidad",topic);
 
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
-                Log.d("Comunidad",topic);
+
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.content_frame, new EnclavesFragment());
