@@ -23,6 +23,7 @@ public class EnclavesFragment extends Fragment {
 
 
     private ListView mListView;
+    private String comunidad;
 
 
     public EnclavesFragment() {
@@ -32,6 +33,13 @@ public class EnclavesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            comunidad = bundle.getString("KEY_DETAIL", "Madrid");
+            Log.d("Comunidad pasada",comunidad);
+        }
 
         View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
 
@@ -43,10 +51,11 @@ public class EnclavesFragment extends Fragment {
                 this.getActivity(),
                 String.class,
                 android.R.layout.simple_list_item_1,
-                databaseReference.orderByChild("Comunidad_enclave").equalTo("Andalucía")
+                databaseReference.orderByChild("Comunidad_enclave").equalTo(comunidad)
         ) {
             @Override
             protected String parseSnapshot(DataSnapshot snapshot) {
+                Log.d("imagen recbida", snapshot.child("Imagen_Enclave").getValue(String.class));
                 return snapshot.child("Nombre_enclave").getValue(String.class);
             }
 

@@ -70,9 +70,16 @@ public class ConnectFragment extends Fragment {
 
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
 
+
+                EnclavesFragment myDetailFragment = new EnclavesFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("KEY_DETAIL", topic);
+                myDetailFragment.setArguments(bundle);
+
+
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_frame, new EnclavesFragment());
+                fragmentTransaction.replace(R.id.content_frame, myDetailFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
