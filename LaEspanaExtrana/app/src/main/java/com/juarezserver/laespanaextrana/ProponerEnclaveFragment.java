@@ -45,6 +45,10 @@ public class ProponerEnclaveFragment extends Fragment {
 
     private EditText mNombreTxt;
     private EditText mDescripcionTxt;
+    private EditText mPoblacionTxt;
+    private EditText mProvinciaTxt;
+    private EditText mEmailTxt;
+    private EditText mUsuarioTxt;
 
     private Button mEnviarBtn;
 
@@ -76,6 +80,13 @@ public class ProponerEnclaveFragment extends Fragment {
             mSelectImage = (ImageButton) rootView.findViewById(R.id.selectImageBtn);
             mNombreTxt = (EditText)  rootView.findViewById(R.id.nombreTxt);
             mDescripcionTxt = (EditText) rootView.findViewById(R.id.descripcionTxt);
+        mProvinciaTxt = (EditText) rootView.findViewById(R.id.ProvinciaTxt);
+        mPoblacionTxt = (EditText) rootView.findViewById(R.id.PoblacionTxt);
+        mEmailTxt = (EditText) rootView.findViewById(R.id.emailTxt);
+        mUsuarioTxt = (EditText) rootView.findViewById(R.id.usuarioTxt);
+
+
+
             mEnviarBtn = (Button) rootView.findViewById(R.id.enviarBtn);
 
             mProgress = new ProgressDialog(this.getActivity());
@@ -103,12 +114,19 @@ public class ProponerEnclaveFragment extends Fragment {
 
     public void startPosting(){
 
-            mProgress.setMessage("Enviando enclave...");
-            mProgress.show();
+
             final String nombre_val = mNombreTxt.getText().toString().trim();
             final String desc_val = mDescripcionTxt.getText().toString().trim();
+        final String provincia_val = mProvinciaTxt.getText().toString().trim();
+        final String poblacion_val = mPoblacionTxt.getText().toString().trim();
+        final String usuario_val = mUsuarioTxt.getText().toString().trim();
+        final String email_val = mEmailTxt.getText().toString().trim();
 
-            if(!TextUtils.isEmpty(nombre_val) && !TextUtils.isEmpty(desc_val)){
+            if(!TextUtils.isEmpty(nombre_val) && !TextUtils.isEmpty(desc_val) && mImageUri !=null){
+
+                mProgress.setMessage("Enviando enclave...");
+                mProgress.show();
+
 
                 StorageReference filePath = mStorage.child("Imagenes_Enclaves").child(mImageUri.getLastPathSegment());
                 filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -120,7 +138,15 @@ public class ProponerEnclaveFragment extends Fragment {
 
                         nuevoEnclave.child("Nombre_enclave").setValue(nombre_val);
                         nuevoEnclave.child("Descripcion_enclave").setValue(desc_val);
+                        nuevoEnclave.child("Poblacion_enclave").setValue(poblacion_val);
+                        nuevoEnclave.child("Provincia_enclave").setValue(provincia_val);
+
                         nuevoEnclave.child("Tipo_enclave").setValue("Sin definir");
+                        nuevoEnclave.child("Latitud_enclave").setValue("Sin definir");
+                        nuevoEnclave.child("Longitud_enclave").setValue("Sin definir");
+                        nuevoEnclave.child("Comunidad_enclave").setValue("Sin definir");
+                        nuevoEnclave.child("Autor_enclave").setValue(usuario_val);
+                        nuevoEnclave.child("Email_autor_enclave").setValue(email_val);
 
 
 
@@ -138,6 +164,13 @@ public class ProponerEnclaveFragment extends Fragment {
 
                     }
                 });
+            }
+
+        else {
+                Toast.makeText(getActivity(),"Faltan datos!", Toast.LENGTH_SHORT).show();
+                if (mImageUri ==null){
+                    Toast.makeText(getActivity(),"Falta una imagen del enclave!", Toast.LENGTH_SHORT).show();
+                }
             }
 
 

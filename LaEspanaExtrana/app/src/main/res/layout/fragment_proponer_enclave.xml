@@ -34,6 +34,22 @@
                 android:scaleType="fitCenter"
                 android:elevation="1dp" />
 
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/usuarioTxt"
+                android:hint="Tu nombre de usuario" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/emailTxt"
+                android:hint="Tu email" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,13 +57,32 @@
                 android:ems="10"
                 android:id="@+id/nombreTxt"
                 android:hint="Nombre del enclave" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/descripcionTxt"
+                android:hint="Descripción del enclave" />
+
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/descripcionTxt"
-                android:hint="Descripción del enclave" />
+                android:id="@+id/ProvinciaTxt"
+                android:hint="Provincia del enclave" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/PoblacionTxt"
+                android:hint="Población del enclave" />
+
+
 
             <Button
                 android:text="Enviar enclave"

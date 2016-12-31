@@ -4,8 +4,11 @@ package com.juarezserver.laespanaextrana;
  * Created by modes on 23/12/2016.
  */
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +28,7 @@ public class EnclavesFragment extends Fragment {
     private ListView mListView;
     private String comunidad;
 
+    private ProgressDialog mProgress;
 
     public EnclavesFragment() {
 
@@ -45,6 +49,10 @@ public class EnclavesFragment extends Fragment {
 
         mListView = (ListView) rootView.findViewById(R.id.comunidadesListView);
 
+        mProgress = new ProgressDialog(this.getActivity());
+        mProgress.setMessage("Cargando Enclaves en "+comunidad);
+        mProgress.show();
+
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://la-espana-extrana.firebaseio.com/Enclaves");
 
         FirebaseListAdapter<String> firebaseListAdapter = new FirebaseListAdapter<String>(
@@ -63,6 +71,7 @@ public class EnclavesFragment extends Fragment {
             protected void populateView(View v, String model, int position) {
                 TextView textView = (TextView) v.findViewById(android.R.id.text1);
                 textView.setText(model);
+                mProgress.dismiss();
             }
         };
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,6 +82,17 @@ public class EnclavesFragment extends Fragment {
               Log.d("Comunidad kkkk",topic);
 
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
+                EnclaveFragment myDetailFragment = new EnclaveFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("KEY_DETAIL", topic);
+                myDetailFragment.setArguments(bundle);
+
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_frame, myDetailFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
 
 
             }

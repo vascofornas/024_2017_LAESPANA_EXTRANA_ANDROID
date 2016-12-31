@@ -71,7 +71,7 @@ public class ConnectFragment extends Fragment {
                 //PASA VALOR SELECCIONADO AL SIGUIENTE FRAGMENT
 
 
-                EnclavesFragment myDetailFragment = new EnclavesFragment();
+                EnclaveFragment myDetailFragment = new EnclaveFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("KEY_DETAIL", topic);
                 myDetailFragment.setArguments(bundle);
